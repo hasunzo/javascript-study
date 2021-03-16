@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//function call(){}
+		//myfun = function(){}
+		
+		//function(){} 익명함수 (이름이 없어요)
+		//함수는 호출 >> 몇번이고 >> 필요하다면 재호출
+		
+		//**callback함수 (프로그램 논리에 의해 자동 호출 되는 함수) >> 1초마다 >> 재호출 >> 익명함수
+		
+		//저는요 function aa(){} >> setInterval(aa(), 1000);
+		//function(){} 다른 곳에서 안쓰여 ... setInterval만 쓸거야 의도 ...
+		var myTime = setInterval(function(){
+			let d = new Date(); // java : Date d = new Date()
+			let t = d.toLocaleTimeString();
+			document.getElementById("time").innerHTML = t;
+		}, 1000);
+		
+		//myTime === setInterval
+		function myTimeStop(){
+			window.clearInterval(myTime);
+		}
+	</script>
+</head>
+<body>
+		<p id = "time"></p>
+		<button onclick="myTimeStop()">stop Time</button>
+</body>
+</html>
